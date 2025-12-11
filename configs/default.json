@@ -1,0 +1,54 @@
+{
+  "input": {
+    "video_path": "inputs/arducam_tag3.mp4",
+    "scale_factor": 1.0,
+    "use_roi": false
+  },
+  "tag": {
+    "family": "tag36h11",
+    "id_expected": 3,
+    "size_meters": 0.1
+  },
+  "sampling": {
+    "warp_size": 96,
+    "cells": 6,
+    "border_cells": 1
+  },
+  "decode": {
+    "max_hamming": 4
+  },
+  "gpu": {
+    "enabled": true,
+    "tile_width": 16,
+    "tile_height": 16,
+    "force_cpu_exact_sampling": true,
+    "corner": {
+      "blur_size": 5,
+      "min_area": 4000,
+      "max_area": 9000
+    }
+  },
+  "pose": {
+    "tag_size_meters": 0.16,
+    "use_ippe": true,
+    "gpu": {
+      "force_cpu_pose": false
+    }
+  },
+  "tracking": {
+    "enabled": true,
+    "detect_every_n": 5,
+    "max_optical_flow_error": 10.0,
+    "min_tracked_points": 3,
+    "max_rot_delta_deg": 10.0,
+    "max_trans_delta_m": 0.2,
+    "fallback_on_bad_decode": true
+  },
+  "outputs": {
+    "root": "outputs/",
+    "debug_dir": "outputs/debug_phaseX/",
+    "metrics_csv": "outputs/metrics_phaseX.csv",
+    "report_txt": "outputs/report_phaseX.txt"
+  }
+}
+
