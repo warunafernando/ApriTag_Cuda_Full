@@ -17,6 +17,33 @@
   "decode": {
     "max_hamming": 4
   },
+  "edges": {
+    "mode": "CPU_CANNY",
+    "low_thresh": 30,
+    "high_thresh": 90
+  },
+  "quads": {
+    "min_area": 400.0,
+    "max_area": 20000.0,
+    "min_aspect": 0.5,
+    "max_aspect": 2.0,
+    "max_rect_error_deg": 25.0,
+    "max_quads_per_frame": 10
+  },
+  "corner_refine": {
+    "mode": "GPU",
+    "window_size": 5,
+    "max_iters": 5,
+    "epsilon": 0.03,
+    "step_max": 0.5,
+    "det_min": 1e-4,
+    "grad_thresh": 1.0,
+    "threads_per_block": 256,
+    "allow_failover": false,
+    "fallback_mode": "CPU",
+    "gpu_min_tags": 8,
+    "gpu_min_resolution": [1600, 1200]
+  },
   "gpu": {
     "enabled": true,
     "tile_width": 16,
